@@ -10,13 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611181033) do
+ActiveRecord::Schema.define(:version => 20120611185446) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "goNum"
+    t.integer  "deviceCount"
   end
 
   create_table "devices", :force => true do |t|
