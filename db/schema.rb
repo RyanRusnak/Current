@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611185446) do
+ActiveRecord::Schema.define(:version => 20120611190102) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20120611185446) do
     t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "incomAddress"
+    t.string   "deviceType"
+    t.string   "dsName"
+    t.string   "frameSize"
+    t.string   "descName"
+    t.string   "descLocation"
+    t.string   "descBucket"
+    t.boolean  "trending"
+    t.string   "plugCTrating"
+    t.string   "voltageClass"
   end
 
 end

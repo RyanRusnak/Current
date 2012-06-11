@@ -28,6 +28,16 @@
 <table>
   <tr>
     <th>Name</th>
+	<th>incomAddress</th>
+	<th>deviceType</th>
+	<th>dsname</th>
+	<th>frameSize</th>
+	<th>descName</th>
+	<th>descLocation</th>
+	<th>descBucket</th>
+	<th>Trending</th>
+	<th>plugCTrating</th>
+	<th>voltageClass</th>
     <th></th>
     <th></th>
     <th></th>
@@ -36,6 +46,16 @@
 <% @customer.devices.each do |device| %>
   <tr>
     <td><%= device.name %></td>
+	<td><%= device.incomAddress %></td>
+	<td><%= device.deviceType %></td>
+	<td><%= device.dsName %></td>
+	<td><%= device.frameSize %></td>
+	<td><%= device.descName %></td>
+	<td><%= device.descLocation %></td>
+	<td><%= device.descBucket %></td>
+	<td><%= device.trending %></td>
+	<td><%= device.plugCTrating %></td>
+	<td><%= device.voltageClass %></td>
     <td><%= link_to 'Show', customer_device_path(device.customer_id, device) %></td>
     <td><%= link_to 'Edit', edit_customer_device_path(device.customer_id, device) %></td>
     <td><%= link_to 'Destroy', [device.customer, device], :confirm => 'Are you sure?', :method => :delete %></td>
@@ -48,6 +68,46 @@
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+  </div>
+<div class="field">
+    <%= f.label :incomAddress %><br />
+    <%= f.text_field :incomAddress %>
+  </div>
+<div class="field">
+    <%= f.label :deviceType %><br />
+    <%= f.text_field :deviceType %>
+  </div>
+<div class="field">
+    <%= f.label :dsName %><br />
+    <%= f.text_field :dsName %>
+  </div>
+<div class="field">
+    <%= f.label :frameSize %><br />
+    <%= f.text_field :frameSize %>
+  </div>
+<div class="field">
+    <%= f.label :descName %><br />
+    <%= f.text_field :descName %>
+  </div>
+<div class="field">
+    <%= f.label :descLocation %><br />
+    <%= f.text_field :descLocation %>
+  </div>
+<div class="field">
+    <%= f.label :descBucket %><br />
+    <%= f.text_field :descBucket %>
+  </div>
+<div class="field">
+    <%= f.label :trending %><br />
+    <%= f.text_field :trending %>
+  </div>
+<div class="field">
+    <%= f.label :plugCTrating %><br />
+    <%= f.text_field :plugCTrating %>
+  </div>
+<div class="field">
+    <%= f.label :voltageClass %><br />
+    <%= f.text_field :voltageClass %>
   </div>
   <div class="actions">
     <%= f.submit %>
