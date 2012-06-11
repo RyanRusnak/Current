@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -25,19 +24,19 @@
 
 <h1>Listing devices</h1>
 
-<table>
+<table border ="1">
   <tr>
     <th>Name</th>
-	<th>incomAddress</th>
-	<th>deviceType</th>
-	<th>dsname</th>
-	<th>frameSize</th>
-	<th>descName</th>
-	<th>descLocation</th>
-	<th>descBucket</th>
+	<th>incom Address</th>
+	<th>Device Type</th>
+	<th>DS Name</th>
+	<th>Frame Size</th>
+	<th>Name Desc</th>
+	<th>Location</th>
+	<th>Bucket</th>
 	<th>Trending</th>
-	<th>plugCTrating</th>
-	<th>voltageClass</th>
+	<th>CT Rating</th>
+	<th>Voltage Class</th>
     <th></th>
     <th></th>
     <th></th>
@@ -62,54 +61,26 @@
   </tr>
 <% end %>
 </table>
+</br>
+</br>
+</br>
 
+<div id="newDevice">
+	<p id="notice"><%= notice %></p>
 <%= form_for([@customer, @customer.devices.build]) do |f| %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-<div class="field">
-    <%= f.label :incomAddress %><br />
-    <%= f.text_field :incomAddress %>
-  </div>
-<div class="field">
-    <%= f.label :deviceType %><br />
-    <%= f.text_field :deviceType %>
-  </div>
-<div class="field">
-    <%= f.label :dsName %><br />
-    <%= f.text_field :dsName %>
-  </div>
-<div class="field">
-    <%= f.label :frameSize %><br />
-    <%= f.text_field :frameSize %>
-  </div>
-<div class="field">
-    <%= f.label :descName %><br />
-    <%= f.text_field :descName %>
-  </div>
-<div class="field">
-    <%= f.label :descLocation %><br />
-    <%= f.text_field :descLocation %>
-  </div>
-<div class="field">
-    <%= f.label :descBucket %><br />
-    <%= f.text_field :descBucket %>
-  </div>
-<div class="field">
-    <%= f.label :trending %><br />
-    <%= f.text_field :trending %>
-  </div>
-<div class="field">
-    <%= f.label :plugCTrating %><br />
-    <%= f.text_field :plugCTrating %>
-  </div>
-<div class="field">
-    <%= f.label :voltageClass %><br />
-    <%= f.text_field :voltageClass %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<table>
+  <div class="field"><tr><td><%= f.label :name %></td> <td><%= f.text_field :name %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :incomAddress %></td> <td><%= f.text_field :incomAddress %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :deviceType %></td> <td><%= f.text_field :deviceType %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :dsName %></td> <td><%= f.text_field :dsName %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :frameSize %></td> <td><%= f.text_field :frameSize %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :descName %></td> <td><%= f.text_field :descName %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :descLocation %></td> <td><%= f.text_field :descLocation %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :descBucket %></td> <td><%= f.text_field :descBucket %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :trending %></td> <td><%= f.check_box :trending %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :plugCTrating %></td> <td><%= f.text_field :plugCTrating %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :voltageClass %></td> <td><%= f.text_field :voltageClass %></td></tr></div>
+  <div class="actions"><tr><td></td><td><%= f.submit %></td></tr></div>
+</table>
+</div>
 <% end %>

@@ -54,3 +54,13 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+#newDevice
+{
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;	
+  background-color:#eee;
+  width:400px;
+  margin-left:auto;
+  margin-right:auto;
+}

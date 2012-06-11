@@ -49,7 +49,7 @@ class DevicesController < ApplicationController
         format.html { redirect_to(@customer, :notice => 'Device was successfully created.') }
         format.xml  { render :xml => @device, :status => :created, :location => @device }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to(@customer, :notice => 'Device creation failed.') }
         format.xml  { render :xml => @device.errors, :status => :unprocessable_entity }
       end
     end
