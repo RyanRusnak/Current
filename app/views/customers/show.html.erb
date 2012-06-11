@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @customer.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
+
+
+<h1>Listing devices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customer.devices.each do |device| %>
+  <tr>
+    <td><%= device.name %></td>
+    <td><%= link_to 'Show', customer_device_path(device.customer_id, device) %></td>
+    <td><%= link_to 'Edit', edit_customer_device_path(device.customer_id, device) %></td>
+    <td><%= link_to 'Destroy', [device.customer, device], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= form_for([@customer, @customer.devices.build]) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

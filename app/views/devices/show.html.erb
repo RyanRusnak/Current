@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @device.name %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_customer_device_path(@device.customer_id, @device)  %> |
+<%= link_to 'Back', customer_path(@device.customer_id) %>
