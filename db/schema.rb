@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611190102) do
+ActiveRecord::Schema.define(:version => 20120704172954) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -26,16 +26,31 @@ ActiveRecord::Schema.define(:version => 20120611190102) do
     t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "incomAddress"
-    t.string   "deviceType"
-    t.string   "dsName"
-    t.string   "frameSize"
+    t.string   "incom_address"
+    t.string   "device_type"
+    t.string   "ds_name"
+    t.string   "frame_size"
     t.string   "descName"
-    t.string   "descLocation"
-    t.string   "descBucket"
+    t.string   "desc_location"
+    t.string   "desc_bucket"
     t.boolean  "trending"
-    t.string   "plugCTrating"
-    t.string   "voltageClass"
+    t.string   "plug_ctrating"
+    t.string   "voltage_class"
+    t.integer  "status"
+    t.string   "upstream_device"
+    t.string   "mac_address"
+    t.string   "firmware"
+    t.string   "amps"
+    t.string   "power_factor"
+    t.string   "lan_type"
+    t.string   "host_name"
+    t.string   "ip_address_setting"
+    t.string   "subnet_mask"
+    t.string   "default_gateway"
+    t.string   "preferred_dns_server"
+    t.string   "alternate_dns_server"
+    t.string   "domain_name"
+    t.string   "modbus_tcp_enabled"
   end
 
 end

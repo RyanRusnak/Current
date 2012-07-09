@@ -1,28 +1,14 @@
-
-<p>
-  <b>Name:</b>
-  <%= @customer.name %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @customer.status %>
-</p>
-<p>
-  <b>GO#:</b>
-  <%= @customer.goNum %>
-</p>
-<p>
-  <b>Device Count:</b>
-  <%= @customer.deviceCount %>
-</p>
+<div id= "topNav"><%= link_to '<- Customers', customers_path %>
+	<div id="customerHead">
+	<b>Customer:</b><%= @customer.name %></br>
+	<b>GO#:</b><%= @customer.goNum %></br>
+	<b>Status:</b><%= @customer.status %></br>
+	</div>
+	<div id="edit"><%= link_to 'Edit', edit_customer_path(@customer) %></div>
+</div>
 
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
-
-
-<h1>Listing devices</h1>
+<h1>Devices</h1><b>Device Count:</b><%= @customer.deviceCount %>
 
 <table border ="1">
   <tr>
@@ -37,25 +23,25 @@
 	<th>Trending</th>
 	<th>CT Rating</th>
 	<th>Voltage Class</th>
-    <th></th>
+	<th>Status</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @customer.devices.each do |device| %>
   <tr>
-    <td><%= device.name %></td>
-	<td><%= device.incomAddress %></td>
-	<td><%= device.deviceType %></td>
-	<td><%= device.dsName %></td>
-	<td><%= device.frameSize %></td>
+    <td><%= link_to device.name, customer_device_path(device.customer_id, device) %></td>
+	<td><%= device.incom_address %></td>
+	<td><%= device.device_type %></td>
+	<td><%= device.ds_name %></td>
+	<td><%= device.frame_size %></td>
 	<td><%= device.descName %></td>
-	<td><%= device.descLocation %></td>
-	<td><%= device.descBucket %></td>
+	<td><%= device.desc_location %></td>
+	<td><%= device.desc_bucket %></td>
 	<td><%= device.trending %></td>
-	<td><%= device.plugCTrating %></td>
-	<td><%= device.voltageClass %></td>
-    <td><%= link_to 'Show', customer_device_path(device.customer_id, device) %></td>
+	<td><%= device.plug_ctrating %></td>
+	<td><%= device.voltage_class %></td>
+	<td><%= device.status %></td>
     <td><%= link_to 'Edit', edit_customer_device_path(device.customer_id, device) %></td>
     <td><%= link_to 'Destroy', [device.customer, device], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -70,16 +56,17 @@
 <%= form_for([@customer, @customer.devices.build]) do |f| %>
 <table>
   <div class="field"><tr><td><%= f.label :name %></td> <td><%= f.text_field :name %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :incomAddress %></td> <td><%= f.text_field :incomAddress %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :deviceType %></td> <td><%= f.text_field :deviceType %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :dsName %></td> <td><%= f.text_field :dsName %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :frameSize %></td> <td><%= f.text_field :frameSize %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :incom_address %></td> <td><%= f.text_field :incom_address %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :device_type %></td> <td><%= f.text_field :device_type %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :ds_name %></td> <td><%= f.text_field :ds_name %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :frame_size %></td> <td><%= f.text_field :frame_size %></td></tr></div>
   <div class="field"><tr><td><%= f.label :descName %></td> <td><%= f.text_field :descName %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :descLocation %></td> <td><%= f.text_field :descLocation %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :descBucket %></td> <td><%= f.text_field :descBucket %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :desc_location %></td> <td><%= f.text_field :desc_location %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :desc_bucket %></td> <td><%= f.text_field :desc_bucket %></td></tr></div>
   <div class="field"><tr><td><%= f.label :trending %></td> <td><%= f.check_box :trending %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :plugCTrating %></td> <td><%= f.text_field :plugCTrating %></td></tr></div>
-  <div class="field"><tr><td><%= f.label :voltageClass %></td> <td><%= f.text_field :voltageClass %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :plug_ctrating %></td> <td><%= f.text_field :plug_ctrating %></td></tr></div>
+  <div class="field"><tr><td><%= f.label :voltage_class %></td> <td><%= f.text_field :voltage_class %></td></tr></div>
+<div class="field"><tr><td><%= f.label :status %></td> <td><%= f.text_field :status %></td></tr></div>
   <div class="actions"><tr><td></td><td><%= f.submit %></td></tr></div>
 </table>
 </div>

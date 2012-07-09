@@ -16,44 +16,105 @@
     <%= f.text_field :name %>
   </div>
 <div class="field">
-    <%= f.label :incomAddress %><br />
-    <%= f.text_field :incomAddress %>
+    <%= f.label :incom_address %><br />
+    <%= f.text_field :incom_address %>
   </div>
 <div class="field">
-    <%= f.label :deviceType %><br />
-    <%= f.text_field :deviceType %>
+    <%= f.label :device_type %><br />
+    <%= f.text_field :device_type %>
   </div>
 <div class="field">
-    <%= f.label :dsName %><br />
-    <%= f.text_field :dsName %>
+    <%= f.label :ds_name %><br />
+    <%= f.text_field :ds_name %>
   </div>
 <div class="field">
-    <%= f.label :frameSize %><br />
-    <%= f.text_field :frameSize %>
+    <%= f.label :frame_size %><br />
+    <%= f.text_field :frame_size %>
   </div>
 <div class="field">
     <%= f.label :descName %><br />
     <%= f.text_field :descName %>
   </div>
 <div class="field">
-    <%= f.label :descLocation %><br />
-    <%= f.text_field :descLocation %>
+    <%= f.label :desc_location %><br />
+    <%= f.text_field :desc_location %>
   </div>
 <div class="field">
-    <%= f.label :descBucket %><br />
-    <%= f.text_field :descBucket %>
+    <%= f.label :desc_bucket %><br />
+    <%= f.text_field :desc_bucket %>
   </div>
 <div class="field">
     <%= f.label :trending %><br />
-    <%= f.text_field :trending %>
+    <%= f.check_box :trending %>
   </div>
 <div class="field">
-    <%= f.label :plugCTrating %><br />
-    <%= f.text_field :plugCTrating %>
+    <%= f.label :plug_ctrating %><br />
+    <%= f.text_field :plug_ctrating %>
   </div>
 <div class="field">
-    <%= f.label :voltageClass %><br />
-    <%= f.text_field :voltageClass %>
+    <%= f.label :voltage_class %><br />
+    <%= f.text_field :voltage_class %>
+  </div>
+<div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :upstream_device %><br />
+    <%= f.text_field :upstream_device %>
+  </div>
+<div class="field">
+    <%= f.label :mac_address %><br />
+    <%= f.text_field :mac_address %>
+  </div>
+<div class="field">
+    <%= f.label :firmware %><br />
+    <%= f.text_field :firmware %>
+  </div>
+<div class="field">
+    <%= f.label :amps %><br />
+    <%= f.text_field :amps %>
+  </div>
+<div class="field">
+    <%= f.label :power_factor %><br />
+    <%= f.text_field :power_factor %>
+  </div>
+<div class="field">
+    <%= f.label :lan_type %><br />
+    <%= f.text_field :lan_type %>
+  </div>
+<div class="field">
+    <%= f.label :host_name %><br />
+    <%= f.text_field :host_name %>
+  </div>
+<div class="field">
+    <%= f.label :ip_address_setting %><br />
+    <%= f.text_field :ip_address_setting %>
+  </div>
+<div class="field">
+    <%= f.label :subnet_mask %><br />
+    <%= f.text_field :subnet_mask %>
+  </div>
+<div class="field">
+    <%= f.label :default_gateway %><br />
+    <%= f.text_field :default_gateway %>
+  </div>
+<div class="field">
+    <%= f.label :preferred_dns_server %><br />
+    <%= f.text_field :preferred_dns_server %>
+  </div>
+<div class="field">
+    <%= f.label :alternate_dns_server %><br />
+    <%= f.text_field :alternate_dns_server %>
+  </div>
+<div class="field">
+    <%= f.label :domain_name %><br />
+    <%= f.text_field :domain_name %>
+  </div>
+<div class="field">
+    <%= f.label :modbus_tcp_enabled %><br />
+    <%= f.text_field :modbus_tcp_enabled %>
   </div>
   <div class="actions">
     <%= f.submit %>
